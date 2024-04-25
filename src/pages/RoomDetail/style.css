@@ -1,0 +1,12 @@
+
+.navbar-nav a{
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.3s;
+    color: #1d1c1c;
+    text-decoration: none;
+    
+}
+.navbar-nav a:hover{    
+    color: #0C6DFD;
+}

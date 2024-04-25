@@ -1,0 +1,147 @@
+
+.navbars{
+    height: 100lvh;
+    background-color: #F8F9FA;
+}
+.header_left{
+	padding: 20px 30px;	
+}
+.containe{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.rows{
+    display: flex;
+    flex-wrap: wrap;
+}   
+.cardd{
+	width: 100%;
+}
+.top-container{
+	display: flex;
+	align-items: center;
+}
+.profile-image{
+	border-radius: 10px;
+}
+.name{
+	font-size: 15px;
+	font-weight: bold;
+	color: #000;
+	position: relative;
+	top: 8px;
+}
+.mail{
+	font-size: 14px;
+	color: #000;
+	position: relative;
+	top: 2px;
+}
+.name,
+.mail{
+    margin-left: 10px;
+}   
+.col{
+    padding: 0;
+}
+.header_right{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.cards{
+	width: 505px;
+	padding: 10px;
+	box-shadow: 0 0 5px #c3c3c3;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.cards .top{
+	text-align: center;
+}
+.cards p{
+	font-weight: bold;
+	color: #000;
+}
+.cards .drag-area{
+	height: 150px;
+	border-radius: 5px;
+	border: 2px dashed #ccc;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	margin-top: 10px;
+}
+.cards .drag-area .visible{
+	font-size: 16px;
+}
+.cards .select{
+	color: #000;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.cards .select:hover{
+	opacity: 0.6;
+}
+.cards .containers{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	max-height: 200px;
+	overflow-y: auto;
+	margin-top: 10px;
+}
+.cards .containers .image{
+	width: 75px;
+	margin-right: 5px;
+	height: 75px;
+	position: relative;
+	margin-bottom: 5px;
+}
+.cards .containers .div .image img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	border: 1px solid;
+}
+.cards .containers .div .image img:hover{
+	opacity: 0.5;
+}
+
+.cards .containers .div .delete{
+	position: absolute;
+	top: -2px;
+	right: 9px;
+	font-size: 20px;
+	cursor: pointer;
+	color: #000;
+	z-index: 1000;
+}
+.cards .containers .div .delete:hover + img{
+	opacity: 0.5;
+}
+.cards input{
+	width: 100%;
+	height: 100%;
+}
+.cards input,
+.cards .drag-area .on-drop,
+.cards .drag-area .on-dragover .visible{
+    display: none;
+	
+}
+.line{
+	width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+textarea{
+	resize: none;
+}

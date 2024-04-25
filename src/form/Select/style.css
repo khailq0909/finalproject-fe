@@ -1,0 +1,8 @@
+.select{
+    outline: none;
+    border: #ccc ;
+}
+.select section{
+    border-radius: 2px solid #ccc;
+    width: 200px;
+}
