@@ -69,7 +69,7 @@ function Register() {
         setErrors(validationError);
         if (Object.keys(validationError).length === 0) {
             try {
-                    const res = await axios.post("/auth/register", { ...credentials});
+                    const res = await axios.post("https://finalproject-api.onrender.com/api/auth/register", { ...credentials});
                     const data = res.data;
                     console.log(data);
                     Swal.fire({

@@ -5,9 +5,9 @@ import axios from 'axios';
 
 function BookingDetail(booking) {
     const [roomData, setRoomData] = useState();
-    const { data } = useFetch(`/users/${booking.booking?.bookingby}`)
+    const { data } = useFetch(`https://finalproject-api.onrender.com/api/users/${booking.booking?.bookingby}`)
     useEffect(() => {
-        axios.get(`/rooms/find/${booking.booking?.roomId}`).then(data => setRoomData(data.data)).catch(err => console.log(err))
+        axios.get(`https://finalproject-api.onrender.com/api/rooms/find/${booking.booking?.roomId}`).then(data => setRoomData(data.data)).catch(err => console.log(err))
     }, [booking])
     return (
         <div>

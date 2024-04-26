@@ -15,7 +15,7 @@ function Header() {
         e.preventDefault();
         dispatch({ type: "LOGOUT" });
         try {
-            const res = await axios.post("/auth/logout");
+            const res = await axios.post("https://finalproject-api.onrender.com/api/auth/logout");
             dispatch({ type: "LOGOUT_SUCCESS", payload: res.data.details });
             localStorage.removeItem("user");
             navigate("/");

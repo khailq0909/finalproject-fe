@@ -6,7 +6,7 @@ function UserDetail(dataUser) {
     const handleApprove = () => {
         const confirm = window.confirm('Are you sure you wannt to approve this request?');
         if (confirm) {
-            axios.put(`/users/${dataUser?.userData?._id}`, {
+            axios.put(`https://finalproject-api.onrender.com/api/users/${dataUser?.userData?._id}`, {
                 isHomeOwner: true,
             }).then(() => {
                 const email = {
@@ -19,7 +19,7 @@ function UserDetail(dataUser) {
                     <p>Best regard.</p>
                     `
                   }
-                  axios.post(`/emails/sendEmail`,email)
+                  axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`,email)
                 setTimeout(() => {
                     window.location.reload();
                 }, 1000)

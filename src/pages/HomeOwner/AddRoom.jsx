@@ -137,7 +137,7 @@ function AddRoom() {
                     ...credentials,
                     ...payload,
                 };
-                await axios.post("/rooms", newRoom);
+                await axios.post("https://finalproject-api.onrender.com/api/rooms", newRoom);
                 Toast.toastSuccess("Add room successfully");
                 setTimeout(() => {
                     window.location.reload();

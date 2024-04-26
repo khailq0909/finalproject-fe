@@ -11,7 +11,7 @@ import * as Toast from "../common/Toast/Toast"
 function BookingHistory() {
   const [value, onChange] = useState(new Date());
   const [booked, setBooked] = useState([])
-  const { data } = useFetch(`/bookings/by-user`);
+  const { data } = useFetch(`https://finalproject-api.onrender.com/api/bookings/by-user`);
   useEffect(() => {
     setBooked(data.filter(r => r.bookingstatus === "Completed"));
   }, [data])
@@ -19,7 +19,7 @@ function BookingHistory() {
   const handleCancel = (booking) => {
     const confirm = window.confirm('Are you sure you want to cancel');
     if (confirm) {
-      axios.put(`/bookings/cancle/${booking?._id}`).then(() => {
+      axios.put(`https://finalproject-api.onrender.com/api/bookings/cancle/${booking?._id}`).then(() => {
         Toast.toastSuccess("Booking cancelled")
         setTimeout(() => {
           window.location.reload();
@@ -33,7 +33,7 @@ function BookingHistory() {
           <p>Best regard.</p>
           `
         }
-        axios.post(`/emails/sendEmail`,email)
+        axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`,email)
       }).catch(err => {
         Toast.toastError("Something went wrong");
         console.log(err)

@@ -19,7 +19,7 @@ function Me() {
         return <span>Have an errors: {error.message}</span>
     }
     async function getUser() {
-        const response = await axios.get(`users/${user._id}`);
+        const response = await axios.get(`https://finalproject-api.onrender.com/api/users/${user._id}`);
         return response.data;
     }
 

@@ -5,7 +5,9 @@ import { AuthContext } from "../context/AuthContext";
 import slide1 from "../assets/images/slide1.jpg";
 import * as Loading from "../common/Loader/Loader";
 
+const BASE_URL = process.env.REACT_APP_API_KEY
 function Login() {
+
     const [sentCode, setSentCode] = useState();
     const [email, setEmail] = useState();
     const [validCode, setValidCode] = useState(false);
@@ -25,11 +27,12 @@ function Login() {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
     };
 
+console.log(BASE_URL)
     const handleClick = async (e) => {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post("/auth/login", credentials);
+            const res = await axios.post("https://finalproject-api.onrender.com/api/auth/login", credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             navigate(from, { replace: true });
 
@@ -42,7 +45,7 @@ function Login() {
         setIsLoading(true);
         setValidCode(false)
         setTimeout(() => {
-            axios.post('/auth/sendcode', {
+            axios.post('https://finalproject-api.onrender.com/api/auth/sendcode', {
                 email: email
             }).then(() => {
                 setSentCode(true)
@@ -58,7 +61,7 @@ function Login() {
         if (value.length === 4) {
             setIsLoading1(true)
             setTimeout(() => {
-                axios.post('/auth/checkOtp', {
+                axios.post('https://finalproject-api.onrender.com/api/auth/checkOtp', {
                     otp: value
                 }).then(() => {
                     setValidCode(true)
@@ -73,7 +76,7 @@ function Login() {
         }
     }
     const handleChangePassword = () => {
-        axios.post(`auth/changePassword`, {
+        axios.post(`https://finalproject-api.onrender.com/apiauth/changePassword`, {
             email: email,
             password: passWord,
         }).then(() => {

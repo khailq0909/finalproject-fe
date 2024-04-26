@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import useFecth from '../../hooks/useFetch'
+import useFetch from '../../hooks/useFetch'
 import noData from "../../assets/images/noData.png";
 import UserDetail from '../../form/UserDetail/UserDetail';
 
 function ManageRequestHomeOwner() {
     const [userHomeOwnerReq, setUserHomeOwnerReq] = useState([]);
     const [userData, setUserData] = useState();
-    const { data} = useFecth(`/users`);
+    const { data} = useFetch(`https://finalproject-api.onrender.com/api/users`);
 
     useEffect(() => {
         setUserHomeOwnerReq(data.filter(user => user.requestHomeOwner === true))

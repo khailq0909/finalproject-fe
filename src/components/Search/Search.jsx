@@ -37,7 +37,7 @@ function Search() {
         room: 1,
     });
 
-    const { data } = useFetch('/rooms/getProvince')
+    const { data } = useFetch('https://finalproject-api.onrender.com/api/rooms/getProvince')
     const handelChooseCity = (e) => {
         setCity(e.target.value)
         setInputValue(e.target.value)

@@ -11,11 +11,13 @@ import OurPolicy from './OurPolicy';
 import Location from './Location';
 import AboutAccommation from './AboutAccommation';
 import BookingModal from '../BookingModal';
-const socket = io('http://localhost:3001', {
+const BASE_URL= process.env.REACT_APP_API_URL
+const socket = io('https://finalproject-api.onrender.com', {
     reconnection: true
 });
 
 function RoomInfor() {
+    console.log(BASE_URL)
     const location = useLocation();
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
@@ -40,7 +42,7 @@ function RoomInfor() {
     const addComment = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.put(`/rooms/comment/room/${roomId}`, { rating: rating, comment: comment });
+            const { data } = await axios.put(`https://finalproject-api.onrender.com/api/rooms/comment/room/${roomId}`, { rating: rating, comment: comment });
             if (data.success === true) {
                 setComment('');
                 setRating('');

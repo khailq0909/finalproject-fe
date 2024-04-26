@@ -15,7 +15,7 @@ function ManageUser() {
   const handleBanAccount = (id) => {
     const confirm = window.confirm('Are you sure you wannt to ban this account?');
     if (confirm) {
-      axios.put(`/users/${id}`, {
+      axios.put(`https://finalproject-api.onrender.com/api/users/${id}`, {
         isActive: false,
       }).then(() => {
         setTimeout(() => {
@@ -28,7 +28,7 @@ function ManageUser() {
   const handleUnBanAccount = (id) => {
     const confirm = window.confirm('Are you sure you wannt to ban this account?');
     if (confirm) {
-      axios.put(`/users/${id}`, {
+      axios.put(`https://finalproject-api.onrender.com/api/users/${id}`, {
         isActive: true,
       }).then(() => {
         setTimeout(() => {
@@ -44,7 +44,7 @@ function ManageUser() {
   }, [userData])
 
   useEffect(() => {
-    axios.get(`/users`)
+    axios.get(`https://finalproject-api.onrender.com/api/users`)
       .then((data) => {
         setuserData(data.data);
       })

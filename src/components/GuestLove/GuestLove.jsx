@@ -2,7 +2,7 @@ import React from 'react'
 import useFetch from '../../hooks/useFetch';
 
 function GuestLove() {
-    const { data } = useFetch('/rooms/city/countByCity?city=Hà Nội,Đà Nẵng,Hồ Chí Minh');
+    const { data } = useFetch('https://finalproject-api.onrender.com/api/rooms/city/countByCity?city=Hà Nội,Đà Nẵng,Hồ Chí Minh');
   return (
     <div>
               <h3 className='text-black fw-bold mb-4'>Place Guest Love</h3>

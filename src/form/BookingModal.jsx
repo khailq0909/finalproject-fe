@@ -17,7 +17,7 @@ function BookingModal({ user, roomData}) {
     const fee = 1.5;
 
     const totalPrice = (+roomData.pricePerNight * totalDays) + fee;
-    const { data } = useFetch(`/users/${user?._id}`);
+    const { data } = useFetch(`https://finalproject-api.onrender.com/api/users/${user?._id}`);
     const handlePayment = async() =>{
         const bookingDetails = {
             room: roomData,

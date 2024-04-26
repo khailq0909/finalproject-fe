@@ -7,11 +7,11 @@ import BookingDetail from '../../components/BookingDetail';
 
 function ManagePayment() {
     const [bookingDetail, setbookingDetail] = useState({});
-    const { data } = useFetch('/bookings/by-homeowner')
+    const { data } = useFetch('https://finalproject-api.onrender.com/api/bookings/by-homeowner')
     const handleClickDelete = (bookingId) => {
         const confirmed = window.confirm("Are you sure you want to delete?");
         if (confirmed) {
-            axios.delete(`/bookings/${bookingId}`).then(data => {
+            axios.delete(`https://finalproject-api.onrender.com/api/bookings/${bookingId}`).then(data => {
                 Toast.toastSuccess("Deleted");
                 setTimeout(() => {
                     window.location.reload();

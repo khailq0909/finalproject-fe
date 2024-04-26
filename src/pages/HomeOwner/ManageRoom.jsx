@@ -9,13 +9,13 @@ import useFetch from '../../hooks/useFetch';
 function ManageRoom() {
   const { user } = useContext(AuthContext);
   const [dataEdit, setdataEdit] = useState([]);
-  const { data } = useFetch(`/rooms/list`)
+  const { data } = useFetch(`https://finalproject-api.onrender.com/api/rooms/list`)
   if (data == null) <></>
   function handleClickDelete(id) {
     const conf = window.confirm("Are you sure you want to delete?");
     try {
       if (conf) {
-        axios.delete(`/rooms/${id}`);
+        axios.delete(`https://finalproject-api.onrender.com/api/rooms/${id}`);
         console.log("delete successfully")
         Toast.toastSuccess("Deleted");
         setTimeout(() => {

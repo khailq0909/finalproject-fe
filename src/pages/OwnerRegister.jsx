@@ -66,7 +66,7 @@ function OwnerRegister() {
     }
 
     const handleSubmit = () => {
-        axios.put(`/users/${user?._id}`, {
+        axios.put(`https://finalproject-api.onrender.com/api/users/${user?._id}`, {
             ...credentials,
             requestHomeOwner: true
         }).then(() => {
@@ -79,7 +79,7 @@ function OwnerRegister() {
                 <p>Best regard.</p>
                 `
             }
-            axios.post(`/emails/sendEmail`, email)
+            axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`, email)
 
             const emailtoAdmin = {
                 email: user?.email,
@@ -89,7 +89,7 @@ function OwnerRegister() {
                 <p>Best regard.</p>
                 `
             }
-            axios.post(`/emails/sendEmail`, emailtoAdmin)
+            axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`, emailtoAdmin)
 
             Swal.fire({
                 title: 'Congratulations!',

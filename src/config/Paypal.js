@@ -53,7 +53,7 @@ const ButtonWrapper = ({ showSpinner,currency,amount,payload, setIsSuccess }) =>
                 <p>Best regard.</p>
                 `
             }
-            axios.post(`/emails/sendEmail`,sendEmail)
+            axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`,sendEmail)
             setIsSuccess(true);
             Swal.fire({
                 title: 'Congratulations!',

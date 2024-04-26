@@ -9,7 +9,6 @@ import { enUS } from 'date-fns/locale'; // import locale file
 import axios from 'axios';
 import slide1 from '../../assets/images/slide1.jpg'
 import Select from '../../form/Select/Select';
-import Pagination from '../Pagination/Pagination';
 import {
   faCalendarDays,
   faPerson,
@@ -52,7 +51,7 @@ function Container() {
   const [reset, setReset] = useState(false);
   const [province, setProvince] = useState();
   let state = []
-  const { data, loading, reFetch } = useFetch(`/rooms?&city=${city || ""}&min=${min || 0}&max=${max || 999}&adultCount=${options?.adultCount}&childCount=${options?.childCount}&startDate=${date[0]?.startDate}&endDate=${date[0]?.endDate}&fac=${roomFac}&type=${type}&sort=${sort.sort},${sort.order}`)
+  const { data, loading, reFetch } = useFetch(`https://finalproject-api.onrender.com/api/rooms?&city=${city || ""}&min=${min || 0}&max=${max || 999}&adultCount=${options?.adultCount}&childCount=${options?.childCount}&startDate=${date[0]?.startDate}&endDate=${date[0]?.endDate}&fac=${roomFac}&type=${type}&sort=${sort.sort},${sort.order}`)
   const handleSetMin = (e) => {
     setInputValue1(e.target.value)
     setTimeout(() => {
@@ -66,7 +65,7 @@ function Container() {
     }, 2000)
   }
   useEffect(()=>{
-    axios.get(`/rooms/getProvince`).then(data => setProvince(data.data))
+    axios.get(`https://finalproject-api.onrender.com/api/rooms/getProvince`).then(data => setProvince(data.data))
   },[])
   useEffect(() => {
     const getRoomType = () => {
