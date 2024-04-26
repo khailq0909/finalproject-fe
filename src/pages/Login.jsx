@@ -35,7 +35,6 @@ console.log(BASE_URL)
             const res = await axios.post("https://finalproject-api.onrender.com/api/auth/login", credentials,{withCredentials:true});
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             navigate(from, { replace: true });
-
         } catch (err) {
             dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
         }
