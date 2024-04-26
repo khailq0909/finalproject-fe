@@ -30,7 +30,7 @@ function RoomInfor() {
     const [commentsRealTime, setCommentsRealTime] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://finalproject-api.onrender.com/rooms/find/${roomId}`)
+        axios.get(`https://finalproject-api.onrender.com/api/rooms/find/${roomId}`)
             .then(data => {
                 setComments(data.data.comments)
                 setRoomdata(data.data);
