@@ -14,10 +14,9 @@ function BookingHistory() {
   const { data } = useFetch(`https://finalproject-api.onrender.com/api/bookings/by-user`);
   useEffect(() => {
     axios.get(`https://finalproject-api.onrender.com/api/bookings/by-user`).then((data)=>{
-      console.log(data)
+      console.log("booking: ",data)
     }).catch(err=> console.log(err))
   }, [])
-  console.log("bôking:", data)
   useEffect(() => {
     setBooked(data?.filter(r => r.bookingstatus === "Completed"));
   }, [data])
