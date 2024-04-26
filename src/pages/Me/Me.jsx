@@ -79,8 +79,8 @@ function Me() {
                         setTimeout(() => {
                             window.location.reload();
                         }, 3000)
+                    dispatch({ type: "LOGIN_SUCCESS", payload: data.data  })
                     }).catch((err) => console.log(err))
-
                 } catch (err) {
                     console.log("Error " + err.response.data);
                 }
