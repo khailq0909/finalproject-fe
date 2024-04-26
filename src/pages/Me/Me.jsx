@@ -76,10 +76,10 @@ function Me() {
                 try {
                     axios.put(`https://finalproject-api.onrender.com/api/users/${user._id}`, { ...credentials }).then((data) => {
                         Toast.toastSuccess("Update successfully")
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 3000)
-                    dispatch({ type: "LOGIN_SUCCESS", payload: data.data  })
+                        // setTimeout(() => {
+                        //     window.location.reload();
+                        // }, 3000)
+                        console.log(data)
                     }).catch((err) => console.log(err))
                 } catch (err) {
                     console.log("Error " + err.response.data);
