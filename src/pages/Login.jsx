@@ -79,7 +79,7 @@ console.log(BASE_URL)
         axios.post(`https://finalproject-api.onrender.com/apiauth/changePassword`, {
             email: email,
             password: passWord,
-        }).then(() => {
+        },{withCredentials:true}).then(() => {
             window.location.reload()
             setEmail("")
             setValidCode(false)
