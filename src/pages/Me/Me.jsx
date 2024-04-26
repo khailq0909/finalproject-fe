@@ -73,12 +73,11 @@ function Me() {
             try{
                 const conf= window.confirm("Are you sure you want to update your profile?");
                 if(conf){
-                    axios.put(`https://finalproject-api.onrender.com/api/users/${user._id}`,{...credentials}).then((data)=> {
+                    axios.put(`https://finalproject-api.onrender.com/api/users/${user._id}`,{...credentials}).then(()=> {
                     Toast.toastSuccess("Update successfully") 
                         setTimeout(()=>{
                             window.location.reload();
                         },3000)
-                    dispatch({ type: "LOGIN_SUCCESS", payload: data.data  })
                 }).catch((err)=> console.log(err))
                 }
             }catch(err){
