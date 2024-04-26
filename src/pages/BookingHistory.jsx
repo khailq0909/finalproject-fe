@@ -12,8 +12,9 @@ function BookingHistory() {
   const [value, onChange] = useState(new Date());
   const [booked, setBooked] = useState([])
   const { data } = useFetch(`https://finalproject-api.onrender.com/api/bookings/by-user`);
+  console.log("bôking:", data)
   useEffect(() => {
-    setBooked(data.filter(r => r.bookingstatus === "Completed"));
+    setBooked(data?.filter(r => r.bookingstatus === "Completed"));
   }, [data])
   console.log(data)
   const handleCancel = (booking) => {
