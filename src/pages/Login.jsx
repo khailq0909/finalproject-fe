@@ -32,7 +32,7 @@ console.log(BASE_URL)
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post("https://finalproject-api.onrender.com/api/auth/login", credentials);
+            const res = await axios.post("https://finalproject-api.onrender.com/api/auth/login", credentials,{withCredentials:true});
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             navigate(from, { replace: true });
 
@@ -76,10 +76,10 @@ console.log(BASE_URL)
         }
     }
     const handleChangePassword = () => {
-        axios.post(`https://finalproject-api.onrender.com/apiauth/changePassword`, {
+        axios.post(`https://finalproject-api.onrender.com/api/auth/changePassword`, {
             email: email,
             password: passWord,
-        },{withCredentials:true}).then(() => {
+        }).then(() => {
             window.location.reload()
             setEmail("")
             setValidCode(false)
