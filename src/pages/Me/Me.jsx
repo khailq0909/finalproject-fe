@@ -109,7 +109,7 @@ function Me() {
                 <p>Best regard.</p>
                 `
             }
-            axios.post(`/emails/sendEmail`, email)
+            axios.post(`https://finalproject-api.onrender.com/api/emails/sendEmail`, email)
         }).catch(err => {
             console.log(err?.response.data.message)
         })
