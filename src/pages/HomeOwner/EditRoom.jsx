@@ -189,7 +189,7 @@ function EditRoom({ dataEdit }) {
                 ...credentials,
                 ...payload,
             };
-            await axios.put(`/rooms/${dataEdit?._id}`, newRoom);
+            await axios.put(`https://finalproject-api.onrender.com/api/rooms/${dataEdit?._id}`, newRoom);
             Toast.toastSuccess("Edit room successfully");
             setTimeout(() => {
                 window.location.reload();

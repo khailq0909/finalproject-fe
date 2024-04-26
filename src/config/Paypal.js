@@ -34,7 +34,7 @@ const ButtonWrapper = ({ showSpinner,currency,amount,payload, setIsSuccess }) =>
         });
     },[currency])
     const handleSaveOrder = async () => {
-        const res = await axios.post("/bookings", {...payload});
+        const res = await axios.post("https://finalproject-api.onrender.com/api/bookings", {...payload});
         if (res.status === 200) {
             console.log(res.data.order)
             const sendEmail = {
